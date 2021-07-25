@@ -1,7 +1,7 @@
 import NotFound from './NotFound';
 import Photo from './Photo';
 
-const PhotoContainer = ({ data }) => {
+const PhotoContainer = ({ data, title }) => {
     let photos;
     if (data.length > 0) {
         photos = data.map(photo => {
@@ -14,7 +14,7 @@ const PhotoContainer = ({ data }) => {
 
     return (
         <div className="photo-container">
-            <h2>Results</h2>
+            <h2>Gallery of "{ title }" Photos</h2>
             <ul>
                 { photos }
             </ul>
