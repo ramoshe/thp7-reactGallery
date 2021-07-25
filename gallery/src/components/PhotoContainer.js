@@ -4,7 +4,10 @@ import Photo from './Photo';
 const PhotoContainer = ({ data }) => {
     let photos;
     if (data.length > 0) {
-        photos = data.map((url, index) => <Photo url={ url } key={ index } />);
+        photos = data.map(photo => {
+            photo.url = `https://live.staticflickr.com/${photo.server}/${photo.id}_${photo.secret}.jpg`;
+            return <Photo url={photo.url} alt={photo.title} key={ photo.id } />
+        });
     } else {
         photos = <NotFound />;
     }
