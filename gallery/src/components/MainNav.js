@@ -1,11 +1,9 @@
 import { NavLink } from "react-router-dom";
 
-const MainNav = () => 
+const MainNav = ({ labels }) => 
     <nav className="main-nav">
         <ul>
-            <li><NavLink to='/calm'>Calm</NavLink></li>
-            <li><NavLink to='/light'>Light</NavLink></li>
-            <li><NavLink to='/bliss'>Bliss</NavLink></li>
+            {labels.map(label => <li><NavLink to={`/${label}`}>{label}</NavLink></li>)}
         </ul>
     </nav>;
 
