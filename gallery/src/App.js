@@ -1,6 +1,6 @@
 import { Component } from 'react';
-import apiKey from './config';
-import { BrowserRouter, Route, Link, NavLink, Switch } from 'react-router-dom';
+//import apiKey from './config';
+import { BrowserRouter } from 'react-router-dom';
 import SearchForm from './components/SearchForm';
 import MainNav from './components/MainNav';
 import PhotoContainer from './components/PhotoContainer';
@@ -15,6 +15,8 @@ class App extends Component {
             "https://farm5.staticflickr.com/4425/36337012384_ba3365621e.jpg"
         ]
     }
+
+    // flickrSearchAPIUrl = `https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&text=sunsets&per_page=24&format=json&nojsoncallback=1`;
     
     render() {
         return (
