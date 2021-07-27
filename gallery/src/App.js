@@ -11,24 +11,11 @@ class App extends Component {
     state = {
         data: {},
         loading: true,
-        navTopics: [ "cat", "bird", "dog" ],
-        navPhotos: [],
         currentTitle: 'sunset'
     }
 
     componentDidMount() {
-        this.setNavPhotos(this.state.navTopics);
         this.performSearch(this.state.currentTitle);
-    }
-
-    setNavPhotos(topics) {
-        let navPhotos = [];
-        topics.map(topic => {
-            return axios.get(`https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&text=${topic}s&per_page=24&format=json&nojsoncallback=1`)
-                .then(res => navPhotos.push(res.data.photos.photo))
-                .catch(err => {console.log('Error fetching and parsing data', err)});
-        });
-        this.setState({ navPhotos });
     }
 
     performSearch = (query) => {
@@ -39,6 +26,7 @@ class App extends Component {
                     loading: false,
                     currentTitle: query
                 });
+                return response.data.photos.photo;
             })
             .catch(error => {
                 console.log('Error fetching and parsing data', error);
@@ -46,25 +34,13 @@ class App extends Component {
     }
     
     render() {
-        const mainRoute = (<Route 
-            exact path="/" 
-            render={ () => <PhotoContainer 
+        const photos = () => {
+            return <PhotoContainer 
                 title={this.state.currentTitle}
                 data={this.state.data}
-            /> }
-        />);
+            />
+        };
         
-        const navRoutes = (
-            this.state.navTopics.map((topic, index) => <Route 
-                key={topic}
-                path={`/${topic}`} 
-                render={ () => <PhotoContainer 
-                    title={topic}
-                    data={this.state.navPhotos[index]}
-                /> }
-            /> )
-        );
-
         return (
             <BrowserRouter>
                 <div className="container">
@@ -75,8 +51,19 @@ class App extends Component {
                          ? <h2 style={{color:"silver"}}>Loading...</h2>
                          : (
                             <Switch>
-                                { mainRoute }
-                                { navRoutes }
+                                <Route exact path="/" render={ () => photos() } />
+                                <Route path="/cat" render={ () => {
+                                    this.performSearch("cat");
+                                    return photos() }}
+                                />
+                                <Route path="/bird" render={ () => {
+                                    this.performSearch("bird");
+                                    return photos() }}
+                                />
+                                <Route path="/dog" render={ () => {
+                                    this.performSearch("dog");
+                                    return photos() }}
+                                />
                             </Switch>
                         )
                     }
