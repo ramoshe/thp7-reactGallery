@@ -46,27 +46,23 @@ class App extends Component {
                 <div className="container">
                     <SearchForm onSearch={this.performSearch} />
                     <MainNav labels={this.state.navTopics} />
-                    { 
-                        (this.state.loading)
-                         ? <h2 style={{color:"silver"}}>Loading...</h2>
-                         : (
-                            <Switch>
-                                <Route exact path="/" render={ () => photos() } />
-                                <Route path="/cat" render={ () => {
-                                    this.performSearch("cat");
-                                    return photos() }}
-                                />
-                                <Route path="/bird" render={ () => {
-                                    this.performSearch("bird");
-                                    return photos() }}
-                                />
-                                <Route path="/dog" render={ () => {
-                                    this.performSearch("dog");
-                                    return photos() }}
-                                />
-                            </Switch>
-                        )
-                    }
+                    { (this.state.loading)
+                     ? <h2 style={{color:"silver"}}>Loading...</h2>
+                     : ( <Switch>
+                        <Route exact path="/" render={ () => photos() } />
+                        <Route path="/cat" render={ () => {
+                            this.performSearch("cat");
+                            return photos() }}
+                        />
+                        <Route path="/bird" render={ () => {
+                            this.performSearch("bird");
+                            return photos() }}
+                        />
+                        <Route path="/dog" render={ () => {
+                            this.performSearch("dog");
+                            return photos() }}
+                        />
+                    </Switch> )}
                 </div>
             </BrowserRouter>
         );
