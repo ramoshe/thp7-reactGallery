@@ -6,10 +6,18 @@ class SearchForm extends Component {
         searchText: ''
     }
     
+    /**
+     * Set the "searchText" state based on inpu field value
+     * @param {Object} e - the event object
+     */
     onSearchChange = e => {
         this.setState({ searchText: e.target.value });
     }
     
+    /**
+     * Call the search callback function using state when form is submitted
+     * @param {Object} e - the event object
+     */
     handleSubmit = e => {
         e.preventDefault();
         this.props.onSearch(this.query.value);

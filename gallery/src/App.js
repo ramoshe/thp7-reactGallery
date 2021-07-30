@@ -18,6 +18,10 @@ class App extends Component {
         this.performSearch(this.state.currentTitle);
     }
 
+    /**
+     * Get flickr photo data based on the query
+     * @param {string} query - search query term(s) 
+     */
     performSearch = (query) => {
         axios.get(`https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${query}s&per_page=24&format=json&nojsoncallback=1`)
             .then(response => {
