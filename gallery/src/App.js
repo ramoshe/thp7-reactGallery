@@ -49,7 +49,7 @@ class App extends Component {
             <BrowserRouter>
                 <div className="container">
                     <SearchForm onSearch={this.performSearch} />
-                    <MainNav labels={this.state.navTopics} />
+                    <MainNav />
                     { (this.state.loading)
                      ? <h2 style={{color:"silver"}}>Loading...</h2>
                      : ( <Switch>
