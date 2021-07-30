@@ -7,7 +7,7 @@ class SearchForm extends Component {
     }
     
     /**
-     * Set the "searchText" state based on inpu field value
+     * Set the "searchText" state based on input field value
      * @param {Object} e - the event object
      */
     onSearchChange = e => {
@@ -20,7 +20,7 @@ class SearchForm extends Component {
      */
     handleSubmit = e => {
         e.preventDefault();
-        this.props.onSearch(this.query.value);
+        this.props.onSearch(this.state.searchText);
         e.currentTarget.reset();
     }
       
@@ -31,7 +31,6 @@ class SearchForm extends Component {
                     type="search" 
                     onChange={this.onSearchChange}
                     name="search" 
-                    ref={(input) => this.query = input} 
                     placeholder="Search" 
                     required 
                 />
