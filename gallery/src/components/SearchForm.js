@@ -1,7 +1,12 @@
 import { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class SearchForm extends Component {
   
+    static propTypes = {
+        onSearch: PropTypes.func
+    }
+
     state = {
         searchText: ''
     }
