@@ -5,13 +5,15 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import SearchForm from './components/SearchForm';
 import MainNav from './components/MainNav';
 import PhotoContainer from './components/PhotoContainer';
+import { CatPhotos, BirdPhotos, DogPhotos } from './components/PhotosForNav';
 
 class App extends Component {
     
     state = {
         data: {},
         loading: true,
-        currentTitle: 'sunset'
+        currentTitle: 'sunset',
+        navPhotos: {}
     }
 
     componentDidMount() {
@@ -30,7 +32,6 @@ class App extends Component {
                     loading: false,
                     currentTitle: query
                 });
-                return response.data.photos.photo;
             })
             .catch(error => {
                 console.log('Error fetching and parsing data', error);
@@ -38,13 +39,6 @@ class App extends Component {
     }
     
     render() {
-        const photos = () => {
-            return <PhotoContainer 
-                title={this.state.currentTitle}
-                data={this.state.data}
-            />
-        };
-        
         return (
             <BrowserRouter>
                 <div className="container">
@@ -53,18 +47,29 @@ class App extends Component {
                     { (this.state.loading)
                      ? <h2 style={{color:"silver"}}>Loading...</h2>
                      : ( <Switch>
-                        <Route exact path="/" render={ () => photos() } />
-                        <Route path="/cat" render={ () => {
-                            this.performSearch("cat");
-                            return photos() }}
+                        <Route exact path="/" render={ () => 
+                            <PhotoContainer 
+                                title={this.state.currentTitle}
+                                data={this.state.data}
+                            /> }
                         />
-                        <Route path="/bird" render={ () => {
-                            this.performSearch("bird");
-                            return photos() }}
+                        <Route path="/cat" render={ () => 
+                            <PhotoContainer 
+                                title={'cat'}
+                                data={CatPhotos}
+                            /> }
                         />
-                        <Route path="/dog" render={ () => {
-                            this.performSearch("dog");
-                            return photos() }}
+                        <Route path="/bird" render={ () => 
+                            <PhotoContainer 
+                                title={'bird'}
+                                data={BirdPhotos}
+                            /> }
+                        />
+                        <Route path="/dog" render={ () => 
+                            <PhotoContainer 
+                                title={'dog'}
+                                data={DogPhotos}
+                            /> }
                         />
                     </Switch> )}
                 </div>
