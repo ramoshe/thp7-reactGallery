@@ -32,7 +32,7 @@ a {
 
 .search-form button {
   outline: none;
-  background-color: chocolate;
+  background-color: darkred;
   border: none;
   padding: 0px 15px;
   border-radius: 0 0.35em 0.35em 0;
@@ -44,7 +44,7 @@ input {
   width: 100%;
   background-color: #edeff0;
   padding: 10px 15px;
-  border: 3px solid chocolate;
+  border: 3px solid darkred;
   border-right: none;
   border-radius: 0.35em 0 0 0.35em;
   outline: none;
@@ -57,7 +57,7 @@ input {
 
 .main-nav a {
   display: block;
-  background: chocolate;
+  background: darkred;
   border-radius: 50%;
   padding: 7px;
   color: #fff;
@@ -68,7 +68,7 @@ input {
 .main-nav .active,
 .main-nav a:hover,
 .search-form button:hover {
-  background-color: sandybrown;
+  background-color: firebrick;
   box-shadow: none;
 }
 
