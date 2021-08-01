@@ -111,6 +111,11 @@ input {
   .photo-container li {
     margin: auto;
   }
+
+  .main-nav li {
+    width: 50%;
+    margin: 2em auto;
+  }
 }
 
 @media only screen and (min-width: 768px)  {
