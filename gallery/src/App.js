@@ -6,14 +6,14 @@ import SearchForm from './components/SearchForm';
 import MainNav from './components/MainNav';
 import PhotoContainer from './components/PhotoContainer';
 import { CatPhotos, BirdPhotos, DogPhotos } from './components/PhotosForNav';
+import Error from './components/404Error';
 
 class App extends Component {
     
     state = {
         data: {},
         loading: true,
-        currentTitle: 'sunset',
-        navPhotos: {}
+        currentTitle: 'sunset'
     }
 
     componentDidMount() {
@@ -71,6 +71,13 @@ class App extends Component {
                                 data={DogPhotos}
                             /> }
                         />
+                        <Route path="/search/:query" render={ ({ match }) => 
+                            <PhotoContainer 
+                                title={match.params.query}
+                                data={this.state.data}
+                            /> }
+                        />
+                        <Route component={Error} />
                     </Switch> )}
                 </div>
             </BrowserRouter>
