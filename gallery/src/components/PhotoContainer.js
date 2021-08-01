@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { withRouter } from 'react-router-dom';
 import NotFound from './NotFound';
 import Photo from './Photo';
 
@@ -36,4 +37,4 @@ PhotoContainer.propTypes = {
     }))
 }
 
-export default PhotoContainer;
+export default withRouter(PhotoContainer);

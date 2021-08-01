@@ -1,13 +1,18 @@
+@import url('https://fonts.googleapis.com/css?family=Special+Elite');
+
 body {
   text-align: center;
   font-family: 'Open Sans', sans-serif;
-  color: #3f4850;
+  /* Background pattern code from https://www.heropatterns.com/ */
+  background-color: #ffffff;
+  background-image: url("data:image/svg+xml,%3Csvg width='42' height='44' viewBox='0 0 42 44' xmlns='http://www.w3.org/2000/svg'%3E%3Cg id='Page-1' fill='none' fill-rule='evenodd'%3E%3Cg id='brick-wall' fill='%23dcdcdc' fill-opacity='0.4'%3E%3Cpath d='M0 0h42v44H0V0zm1 1h40v20H1V1zM0 23h20v20H0V23zm22 0h20v20H22V23z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 }
 
 h2 {
-  font-size: 2em;
+  font-size: 3.4em;
   margin: 52px 0 40px;
   text-transform: capitalize;
+  font-family: 'Special Elite', 'Open Sans', sans-serif;
 }
 
 ul {
@@ -27,7 +32,7 @@ a {
 
 .search-form button {
   outline: none;
-  background-color: #438bbd;
+  background-color: chocolate;
   border: none;
   padding: 0px 15px;
   border-radius: 0 0.35em 0.35em 0;
@@ -39,7 +44,7 @@ input {
   width: 100%;
   background-color: #edeff0;
   padding: 10px 15px;
-  border: 3px solid #d7dbdf;
+  border: 3px solid chocolate;
   border-right: none;
   border-radius: 0.35em 0 0 0.35em;
   outline: none;
@@ -52,16 +57,19 @@ input {
 
 .main-nav a {
   display: block;
-  background: #438bbd;
-  border-radius: 3px;
-  padding: 5px;
+  background: chocolate;
+  border-radius: 50%;
+  padding: 7px;
   color: #fff;
+  font-size: 1.5em;
+  box-shadow: 2px 2px 3px gray;
 }
 
 .main-nav .active,
 .main-nav a:hover,
 .search-form button:hover {
-  background-color: #275270;
+  background-color: sandybrown;
+  box-shadow: none;
 }
 
 .photo-container ul {
@@ -77,12 +85,15 @@ input {
   height: 165px;
   overflow: hidden;
   margin-bottom: 15px;
+  box-shadow: 2px 2px 7px gray;
+  background-color: lightgray;
 }
 
 .photo-container ul img {
   width: 100%;
   transform: scale(1.25);
   transition: transform 1.25s;
+  box-shadow: 2px 2px 10px dimgray;
 }
 
 .photo-container li:hover img {
