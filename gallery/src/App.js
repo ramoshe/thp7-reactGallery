@@ -20,11 +20,17 @@ class App extends Component {
         this.performSearch(this.state.currentTitle);
     }
 
+    componentDidUpdate() {
+        console.log('update');
+        //this.performSearch(this.state.currentTitle);
+    }
+
     /**
      * Get flickr photo data based on the query
      * @param {string} query - search query term(s) 
      */
     performSearch = (query) => {
+        this.setState({ loading: true });
         axios.get(`https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${query}&is_getty=true&per_page=24&format=json&nojsoncallback=1`)
             .then(response => {
                 this.setState({
@@ -50,33 +56,20 @@ class App extends Component {
                         <Route exact path="/" render={ () => 
                             <PhotoContainer 
                                 title={this.state.currentTitle}
-                                data={this.state.data}
-                            /> }
-                        />
+                                data={this.state.data} /> } />
+
                         <Route path="/cat" render={ () => 
-                            <PhotoContainer 
-                                title={'cat'}
-                                data={CatPhotos}
-                            /> }
-                        />
+                            <PhotoContainer title={'cat'} data={CatPhotos} /> } />
                         <Route path="/bird" render={ () => 
-                            <PhotoContainer 
-                                title={'bird'}
-                                data={BirdPhotos}
-                            /> }
-                        />
+                            <PhotoContainer title={'bird'} data={BirdPhotos} /> } />
                         <Route path="/dog" render={ () => 
+                            <PhotoContainer title={'dog'} data={DogPhotos} /> } />
+                        
+                        <Route path="/search/:query" render={ () => 
                             <PhotoContainer 
-                                title={'dog'}
-                                data={DogPhotos}
-                            /> }
-                        />
-                        <Route path="/search/:query" render={ ({ match }) => 
-                            <PhotoContainer 
-                                title={match.params.query}
-                                data={this.state.data}
-                            /> }
-                        />
+                                title={this.state.currentTitle}
+                                data={this.state.data} /> } />
+
                         <Route component={Error} />
                     </Switch> )}
                 </div>
