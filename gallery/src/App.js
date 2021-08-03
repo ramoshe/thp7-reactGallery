@@ -20,11 +20,6 @@ class App extends Component {
         this.performSearch(this.state.currentTitle);
     }
 
-    componentDidUpdate() {
-        console.log('update');
-        //this.performSearch(this.state.currentTitle);
-    }
-
     /**
      * Get flickr photo data based on the query
      * @param {string} query - search query term(s) 
@@ -56,19 +51,24 @@ class App extends Component {
                         <Route exact path="/" render={ () => 
                             <PhotoContainer 
                                 title={this.state.currentTitle}
-                                data={this.state.data} /> } />
+                                data={this.state.data} 
+                                onUpdate={this.performSearch} /> } />
 
                         <Route path="/cat" render={ () => 
-                            <PhotoContainer title={'cat'} data={CatPhotos} /> } />
+                            <PhotoContainer title={'cat'} data={CatPhotos} 
+                                onUpdate={this.performSearch} /> } />
                         <Route path="/bird" render={ () => 
-                            <PhotoContainer title={'bird'} data={BirdPhotos} /> } />
+                            <PhotoContainer title={'bird'} data={BirdPhotos} 
+                                onUpdate={this.performSearch} /> } />
                         <Route path="/dog" render={ () => 
-                            <PhotoContainer title={'dog'} data={DogPhotos} /> } />
+                            <PhotoContainer title={'dog'} data={DogPhotos} 
+                                onUpdate={this.performSearch} /> } />
                         
-                        <Route path="/search/:query" render={ () => 
+                        <Route path="/search/:query" render={ ( {match} ) => 
                             <PhotoContainer 
-                                title={this.state.currentTitle}
-                                data={this.state.data} /> } />
+                                title={match.params.query}
+                                data={this.state.data}
+                                onUpdate={this.performSearch} /> } />
 
                         <Route component={Error} />
                     </Switch> )}
