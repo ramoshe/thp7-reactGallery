@@ -5,7 +5,7 @@ let CatPhotos = {};
 let BirdPhotos = {};
 let DogPhotos = {};
 
-axios.get(`https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${process.env.API_KEY}&tags=cat&is_getty=true&per_page=24&format=json&nojsoncallback=1`)
+axios.get(`https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=cat&is_getty=true&per_page=24&format=json&nojsoncallback=1`)
     .then(response => {
         CatPhotos = response.data.photos.photo;
     })
