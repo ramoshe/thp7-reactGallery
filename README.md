@@ -1,5 +1,5 @@
 # FSJS Project 7: React Gallery App
- My seventh project for the Full Stack JavaScript Techdegree program at Treehouse. An app that displays a images from Flickr using navigation buttons or search.
+ My seventh project for the Full Stack JavaScript Techdegree program at Treehouse. An app that displays images from Flickr by button or search.
  
 ## How To Use
  - You can view a live version of this project here: https://g.ramoshe.com/thp7-reactGallery/
