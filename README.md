@@ -2,9 +2,9 @@
  My seventh project for the Full Stack JavaScript Techdegree program at Treehouse. An app that displays a images from Flickr using navigation buttons or search.
  
 ## How To Use
- - You can view a live version of this project here: https://g.ramoshe.com/thp6-staticNodeExpress/
+ - You can view a live version of this project here: https://g.ramoshe.com/thp7-reactGallery/
  - If you want a local copy of the project:
-    1. Download the files: https://github.com/ramoshe/thp6-staticNodeExpress/archive/refs/heads/main.zip
+    1. Download the files: https://github.com/ramoshe/thp7-reactGallery/archive/refs/heads/main.zip
     2. Follow the instructions below to add your API key
     3. In the console, navigate to the `gallery` folder and run `npm install` and then `npm start`
     4. In your browser go to http://localhost:3000
