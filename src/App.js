@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import axios from 'axios';
-import apiKey from './config';
+import { apiKey } from './config';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import SearchForm from './components/SearchForm';
 import MainNav from './components/MainNav';
