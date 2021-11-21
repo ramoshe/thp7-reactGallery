@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import axios from 'axios';
-import { apiKey } from './config';
+import { apiKey, ghpURL } from './config';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import SearchForm from './components/SearchForm';
 import MainNav from './components/MainNav';
@@ -41,7 +41,7 @@ class App extends Component {
     
     render() {
         return (
-            <BrowserRouter basename="/thp7-reactGallery">
+            <BrowserRouter basename={ghpURL}>
                 <div className="container">
                     <SearchForm onSearch={this.performSearch} />
                     <MainNav />
