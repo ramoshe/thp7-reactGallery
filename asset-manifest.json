@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/thp7-reactGallery/static/css/main.3a731695.chunk.css",
+    "main.js": "/thp7-reactGallery/static/js/main.1904504b.chunk.js",
+    "main.js.map": "/thp7-reactGallery/static/js/main.1904504b.chunk.js.map",
+    "runtime-main.js": "/thp7-reactGallery/static/js/runtime-main.231718ec.js",
+    "runtime-main.js.map": "/thp7-reactGallery/static/js/runtime-main.231718ec.js.map",
+    "static/js/2.0e393618.chunk.js": "/thp7-reactGallery/static/js/2.0e393618.chunk.js",
+    "static/js/2.0e393618.chunk.js.map": "/thp7-reactGallery/static/js/2.0e393618.chunk.js.map",
+    "static/js/3.213a2454.chunk.js": "/thp7-reactGallery/static/js/3.213a2454.chunk.js",
+    "static/js/3.213a2454.chunk.js.map": "/thp7-reactGallery/static/js/3.213a2454.chunk.js.map",
+    "index.html": "/thp7-reactGallery/index.html",
+    "static/css/main.3a731695.chunk.css.map": "/thp7-reactGallery/static/css/main.3a731695.chunk.css.map",
+    "static/js/2.0e393618.chunk.js.LICENSE.txt": "/thp7-reactGallery/static/js/2.0e393618.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.231718ec.js",
+    "static/js/2.0e393618.chunk.js",
+    "static/css/main.3a731695.chunk.css",
+    "static/js/main.1904504b.chunk.js"
+  ]
+}
