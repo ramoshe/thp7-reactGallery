@@ -48,23 +48,23 @@ class App extends Component {
                     { (this.state.loading)
                      ? <h2 style={{color:"silver"}}>Loading...</h2>
                      : ( <Switch>
-                        <Route exact path={`${process.env.PUBLIC_URL}/`} render={ () => 
+                        <Route exact path="/" render={ () => 
                             <PhotoContainer 
                                 title={this.state.currentTitle}
                                 data={this.state.data} 
                                 onUpdate={this.performSearch} /> } />
 
-                        <Route path={`${process.env.PUBLIC_URL}/cat`} render={ () => 
+                        <Route path="/cat" render={ () => 
                             <PhotoContainer title={'cat'} data={CatPhotos} 
                                 onUpdate={this.performSearch} /> } />
-                        <Route path={`${process.env.PUBLIC_URL}/bird`} render={ () => 
+                        <Route path="/bird" render={ () => 
                             <PhotoContainer title={'bird'} data={BirdPhotos} 
                                 onUpdate={this.performSearch} /> } />
-                        <Route path={`${process.env.PUBLIC_URL}/dog`} render={ () => 
+                        <Route path="/dog" render={ () => 
                             <PhotoContainer title={'dog'} data={DogPhotos} 
                                 onUpdate={this.performSearch} /> } />
                         
-                        <Route path={`${process.env.PUBLIC_URL}/search/:query`} render={ ( {match} ) => 
+                        <Route path="/search/:query" render={ ( {match} ) => 
                             <PhotoContainer 
                                 title={match.params.query}
                                 data={this.state.data}
