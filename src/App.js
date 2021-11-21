@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import axios from 'axios';
-import { apiKey, ghpURL } from './config';
+import { apiKey } from './config';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import SearchForm from './components/SearchForm';
 import MainNav from './components/MainNav';
@@ -48,23 +48,23 @@ class App extends Component {
                     { (this.state.loading)
                      ? <h2 style={{color:"silver"}}>Loading...</h2>
                      : ( <Switch>
-                        <Route exact path={`${ghpURL}/`} render={ () => 
+                        <Route exact path="/" render={ () => 
                             <PhotoContainer 
                                 title={this.state.currentTitle}
                                 data={this.state.data} 
                                 onUpdate={this.performSearch} /> } />
 
-                        <Route path={`${ghpURL}/cat`} render={ () => 
+                        <Route path="/cat" render={ () => 
                             <PhotoContainer title={'cat'} data={CatPhotos} 
                                 onUpdate={this.performSearch} /> } />
-                        <Route path={`${ghpURL}/bird`} render={ () => 
+                        <Route path="/bird" render={ () => 
                             <PhotoContainer title={'bird'} data={BirdPhotos} 
                                 onUpdate={this.performSearch} /> } />
-                        <Route path={`${ghpURL}/dog`} render={ () => 
+                        <Route path="/dog" render={ () => 
                             <PhotoContainer title={'dog'} data={DogPhotos} 
                                 onUpdate={this.performSearch} /> } />
                         
-                        <Route path={`${ghpURL}/search/:query`} render={ ( {match} ) => 
+                        <Route path="/search/:query" render={ ( {match} ) => 
                             <PhotoContainer 
                                 title={match.params.query}
                                 data={this.state.data}
