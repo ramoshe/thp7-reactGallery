@@ -41,30 +41,30 @@ class App extends Component {
     
     render() {
         return (
-            <BrowserRouter>
+            <BrowserRouter basename="/thp7-reactGallery">
                 <div className="container">
                     <SearchForm onSearch={this.performSearch} />
                     <MainNav />
                     { (this.state.loading)
                      ? <h2 style={{color:"silver"}}>Loading...</h2>
                      : ( <Switch>
-                        <Route exact path="/" render={ () => 
+                        <Route exact path={`${process.env.PUBLIC_URL}/`} render={ () => 
                             <PhotoContainer 
                                 title={this.state.currentTitle}
                                 data={this.state.data} 
                                 onUpdate={this.performSearch} /> } />
 
-                        <Route path="/cat" render={ () => 
+                        <Route path={`${process.env.PUBLIC_URL}/cat`} render={ () => 
                             <PhotoContainer title={'cat'} data={CatPhotos} 
                                 onUpdate={this.performSearch} /> } />
-                        <Route path="/bird" render={ () => 
+                        <Route path={`${process.env.PUBLIC_URL}/bird`} render={ () => 
                             <PhotoContainer title={'bird'} data={BirdPhotos} 
                                 onUpdate={this.performSearch} /> } />
-                        <Route path="/dog" render={ () => 
+                        <Route path={`${process.env.PUBLIC_URL}/dog`} render={ () => 
                             <PhotoContainer title={'dog'} data={DogPhotos} 
                                 onUpdate={this.performSearch} /> } />
                         
-                        <Route path="/search/:query" render={ ( {match} ) => 
+                        <Route path={`${process.env.PUBLIC_URL}/search/:query`} render={ ( {match} ) => 
                             <PhotoContainer 
                                 title={match.params.query}
                                 data={this.state.data}
